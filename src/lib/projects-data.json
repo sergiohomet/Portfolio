@@ -5,7 +5,7 @@
       "title": "DrinkAPI",
       "description": "Aplicación desarrollada en React, con consumo de API. Implementada con React Router DOM, TailwindCSS, Zustand y Zod para la gestión de estado y validación.",
       "repoUrl": "https://github.com/sergiohomet/DrinkAPI",
-      "liveUrl": "https://drinkspage.netlify.app/",
+      "liveUrl": "https://drinkapi-sergiohomet.netlify.app/",
       "tags": ["React", "API", "TailwindCSS", "Zustand"],
       "imageSrc": "/drinkapi.webp",
       "imageAlt": "DrinkAPI project screenshot"
@@ -23,7 +23,7 @@
       "title": "Patient Administrator",
       "description": "Sistema de administración de pacientes desarrollado con React, TypeScript, Zustand, React Hook Form y React Toastify, optimizado para una gestión de datos clara, validada y escalable.",
       "repoUrl": "https://github.com/sergiohomet/patient-administrator-zustand",
-      "liveUrl": "https://patient-crud-zustand-reacthookform.netlify.app/",
+      "liveUrl": "https://patient-administrator-sergiohomet.netlify.app/",
       "tags": ["React", "TypeScript", "Zustand", "Forms"],
       "imageSrc": "/admin.webp",
       "imageAlt": "Patient Administrator project screenshot"
