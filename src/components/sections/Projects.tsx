@@ -13,7 +13,6 @@ const projects = [
     liveUrl: "https://drinkspage.netlify.app/",
     tags: ["React", "API", "AI", "TailwindCSS", "Zustand"],
     imageId: "drink-api",
-    component: <DrinkRecommender />
   },
   {
     title: "🍽️ LenafTUC",
@@ -57,17 +56,18 @@ export default function Projects() {
               tags={project.tags}
               isReversed={index % 2 !== 0}
             >
-              {project.component ? project.component : (
-                image && (
+              {project.imageId === 'lenaf-tuc' ? (
                   <Image 
-                    src={image.imageUrl}
-                    alt={image.description}
+                    src="/lenaf-tuc-screenshot.png"
+                    alt="LenafTUC project screenshot"
                     width={600}
                     height={400}
                     className="object-cover rounded-lg"
-                    data-ai-hint={image.imageHint}
                   />
-                )
+                ) : (
+                  <div className="w-full h-48 bg-muted rounded-lg flex items-center justify-center">
+                    <span className="text-muted-foreground text-sm">Visualización del proyecto</span>
+                  </div>
               )}
             </ProjectCard>
           )
