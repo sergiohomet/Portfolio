@@ -43,7 +43,7 @@ export default function Contact() {
           <h3 className="font-headline text-xl font-bold text-center lg:text-left">O encuéntrame en:</h3>
           {contactLinks.map(({ icon: Icon, label, href, text }) => (
             <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="block">
-              <Button variant="outline" className="w-full justify-start h-14 text-left">
+              <Button variant="outline" className="w-full justify-start h-14 text-left hover:bg-accent/20 hover:text-accent-foreground">
                 <Icon className="mr-4 h-6 w-6 text-accent flex-shrink-0" />
                 <div className="flex flex-col overflow-hidden">
                   <span className="font-semibold truncate">{label}</span>
