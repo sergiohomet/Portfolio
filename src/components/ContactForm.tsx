@@ -1,18 +1,21 @@
 "use client";
 
 import * as React from "react";
+import { useFormState } from "react-dom";
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 
+import { handleContactForm } from "@/app/actions";
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Form, FormControl, FormField, FormItem, FormLabel, useFormField } from '@/components/ui/form';
-import { AlertDialog, AlertDialogAction, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from './ui/alert-dialog';
+import { AlertDialog, AlertDialogAction, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from './ui/alert-dialog';
 import { cn } from '@/lib/utils';
+import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'El nombre debe tener al menos 2 caracteres.' }),
@@ -47,7 +50,9 @@ CustomFormMessage.displayName = "CustomFormMessage";
 
 
 export default function ContactForm() {
+  const [state, formAction] = useFormState(handleContactForm, { message: '', error: '' });
   const formRef = useRef<HTMLFormElement>(null);
+  const { toast } = useToast();
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -56,14 +61,27 @@ export default function ContactForm() {
       email: '',
       message: '',
     },
-    mode: 'onChange', // Validate on change to update button state
+    mode: 'onChange',
   });
 
-  const { formState } = form;
+  const { formState, reset } = form;
 
-  const onSubmit = () => {
-    // This function is triggered, but we will show the dialog instead of submitting.
-  };
+  useEffect(() => {
+    if (state.message) {
+      toast({
+        title: "¡Mensaje Enviado!",
+        description: state.message,
+      });
+      reset(); 
+    }
+    if (state.error) {
+      toast({
+        variant: "destructive",
+        title: "Error al enviar",
+        description: state.error,
+      });
+    }
+  }, [state, toast, reset]);
 
 
   return (
@@ -72,11 +90,10 @@ export default function ContactForm() {
         <CardTitle className="font-headline">Envíame un mensaje</CardTitle>
       </CardHeader>
       <CardContent>
-        <AlertDialog>
           <Form {...form}>
             <form 
               ref={formRef}
-              onSubmit={form.handleSubmit(onSubmit)}
+              action={formAction}
               className="space-y-4"
             >
                <FormField
@@ -118,25 +135,11 @@ export default function ContactForm() {
                   </FormItem>
                 )}
               />
-              <AlertDialogTrigger asChild>
-                <Button type="submit" className="w-full" disabled={!formState.isValid}>
-                  Enviar Mensaje
-                </Button>
-              </AlertDialogTrigger>
+              <Button type="submit" className="w-full" disabled={!formState.isValid || formState.isSubmitting}>
+                {formState.isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
+              </Button>
             </form>
           </Form>
-          <AlertDialogContent>
-            <AlertDialogHeader>
-              <AlertDialogTitle>¡Funcionalidad en desarrollo!</AlertDialogTitle>
-              <AlertDialogDescription>
-                El formulario de contacto aún no está activo. Por favor, para contactarme, envíame un correo electrónico directamente. ¡Gracias por tu comprensión!
-              </AlertDialogDescription>
-            </AlertDialogHeader>
-            <AlertDialogFooter>
-              <AlertDialogAction>Entendido</AlertDialogAction>
-            </AlertDialogFooter>
-          </AlertDialogContent>
-        </AlertDialog>
       </CardContent>
     </Card>
   );
