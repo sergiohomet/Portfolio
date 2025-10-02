@@ -28,7 +28,7 @@ export default function Hero() {
                         Experiencia <Briefcase className="ml-2"/>
                     </Button>
                 </a>
-                <a href="/CV-Sergio-Homet.pdf" download="CV-Sergio-Homet.pdf">
+                <a href="/SergioHometCV2025.pdf" download="SergioHometCV2025.pdf">
                     <Button variant="outline">
                         Descargar CV <Download className="ml-2"/>
                     </Button>
