@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 import { Section } from "../Section";
 
 export default function Hero() {
@@ -21,9 +21,9 @@ export default function Hero() {
                         Mis Proyectos <ArrowRight className="ml-2"/>
                     </Button>
                 </a>
-                <a href="#contacto">
+                <a href="/CV-Sergio-Homet.pdf" download="CV-Sergio-Homet.pdf">
                     <Button variant="outline">
-                        Contáctame
+                        Descargar CV <Download className="ml-2"/>
                     </Button>
                 </a>
             </div>

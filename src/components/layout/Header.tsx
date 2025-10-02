@@ -9,8 +9,8 @@ import { Button } from '@/components/ui/button';
 const navLinks = [
   { href: '#inicio', label: 'Inicio' },
   { href: '#sobre-mi', label: 'Sobre mí' },
+  { href: '#experiencia', label: 'Experiencia' },
   { href: '#proyectos', label: 'Proyectos' },
-  { href: '#contacto', label: 'Contacto' },
 ];
 
 export default function Header() {
