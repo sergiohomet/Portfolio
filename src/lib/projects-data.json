@@ -8,7 +8,7 @@
       "liveUrl": "https://drinkapi-sergiohomet.netlify.app/",
       "tags": ["React", "API", "TailwindCSS", "Zustand"],
       "imageSrc": "/drinkapi.webp",
-      "imageAlt": "DrinkAPI project screenshot"
+      "imageAlt": "DrinkAPI project"
     },
     {
       "title": "LenafTUC",
@@ -17,7 +17,7 @@
       "liveUrl": "https://lenaftuc.netlify.app/",
       "tags": ["React", "TypeScript", "PDF", "Vite"],
       "imageSrc": "/lenaftuc.webp",
-      "imageAlt": "LenafTUC project screenshot"
+      "imageAlt": "LenafTUC project"
     },
     {
       "title": "Patient Administrator",
@@ -26,7 +26,7 @@
       "liveUrl": "https://patient-administrator-sergiohomet.netlify.app/",
       "tags": ["React", "TypeScript", "Zustand", "Forms"],
       "imageSrc": "/admin.webp",
-      "imageAlt": "Patient Administrator project screenshot"
+      "imageAlt": "Patient Administrator project"
     }
   ]
 }
