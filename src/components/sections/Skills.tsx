@@ -62,12 +62,12 @@ const technicalSkills = [
 ];
 
 const softSkills = [
-  { name: "Resolución de problemas", color: "bg-primary/90" },
-  { name: "Proactividad y adaptabilidad", color: "bg-accent/90" },
-  { name: "Trabajo en equipo ágil", color: "bg-primary/80" },
-  { name: "Gestión del tiempo", color: "bg-accent/80" },
-  { name: "Atención al detalle", color: "bg-primary/70" },
-  { name: "Aprendizaje rápido", color: "bg-accent/70" }
+  { name: "Resolución de problemas", color: "bg-primary/90 text-primary-foreground" },
+  { name: "Proactividad y adaptabilidad", color: "bg-accent/90 text-accent-foreground" },
+  { name: "Trabajo en equipo ágil", color: "bg-primary/80 text-primary-foreground" },
+  { name: "Gestión del tiempo", color: "bg-accent/80 text-accent-foreground" },
+  { name: "Atención al detalle", color: "bg-primary/70 text-primary-foreground" },
+  { name: "Aprendizaje rápido", color: "bg-accent/70 text-accent-foreground" }
 ];
 
 export default function Skills() {
@@ -104,7 +104,7 @@ export default function Skills() {
               </h3>
               <div className="flex flex-wrap gap-2 justify-center">
                   {softSkills.map(skill => (
-                    <Badge key={skill.name} variant="default" className={`${skill.color} text-primary-foreground text-sm px-3 py-1`}>{skill.name}</Badge>
+                    <Badge key={skill.name} variant="default" className={`${skill.color} text-sm px-3 py-1`}>{skill.name}</Badge>
                   ))}
               </div>
             </div>
