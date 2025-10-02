@@ -1,3 +1,10 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "avatar",
+      "description": "Sergio Homet avatar",
+      "imageUrl": "https://images.unsplash.com/photo-1539904720061-539f33782f9c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwb3J0cmFpdCUyMHBlcnNvbnxlbnwwfHx8fDE3NTkzMjc5Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "portrait person"
+    }
+  ]
 }
