@@ -12,7 +12,7 @@ export default function Hero() {
             Sergio Homet – Desarrollador Front End
             </h1>
             <h2 className="mt-6 font-headline text-2xl font-medium tracking-tight text-primary sm:text-3xl">
-            Desarrollo aplicaciones web escalables y optimizadas con React, Next.js y TypeScript.
+            Desarrollo aplicaciones web escalables y optimizadas con React y TypeScript.
             </h2>
             <p className="mt-8 max-w-3xl mx-auto text-lg text-muted-foreground">
             Soy Desarrollador Front End con experiencia en la construcción de interfaces modernas y de alto rendimiento. Me especializo en tecnologías como React, TypeScript y TailwindCSS, aplicando buenas prácticas de código y atención al detalle.

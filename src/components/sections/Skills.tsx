@@ -5,7 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import { Wrench } from "lucide-react";
 
 const technicalSkills = {
-  "Lenguajes y Frameworks": ["JavaScript (ES6+)", "TypeScript", "React", "Next.js"],
+  "Lenguajes y Frameworks": ["JavaScript (ES6+)", "TypeScript", "React"],
   "Estilos & UI": ["TailwindCSS", "Bootstrap", "CSS3", "HTML5"],
   "Herramientas": ["Git", "GitHub", "NPM", "Vite"],
   "Metodologías": ["Desarrollo ágil", "Arquitectura modular", "Buenas prácticas de código"]
@@ -35,8 +35,8 @@ export default function Skills() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
                 {Object.entries(technicalSkills).map(([category, skills]) => (
                     <div key={category}>
-                        <h4 className="text-lg font-semibold mb-3 text-center md:text-left text-primary">{category}</h4>
-                        <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                        <h4 className="text-lg font-semibold mb-3 text-center text-primary">{category}</h4>
+                        <div className="flex flex-wrap gap-2 justify-center">
                         {skills.map(skill => (
                             <Badge key={skill} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground text-sm px-3 py-1">{skill}</Badge>
                         ))}
