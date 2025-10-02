@@ -43,7 +43,7 @@ export default function Skills() {
           </h2>
           <div className="flex flex-wrap gap-2">
             {softSkills.map(skill => (
-              <Badge key={skill} variant="outline" className="text-sm border-accent text-accent-foreground bg-accent/20 hover:bg-accent/40 px-3 py-1">{skill}</Badge>
+              <Badge key={skill} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground text-sm px-3 py-1">{skill}</Badge>
             ))}
           </div>
         </div>
