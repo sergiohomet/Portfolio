@@ -5,10 +5,10 @@ import { Separator } from "@/components/ui/separator";
 import { Wrench } from "lucide-react";
 
 const technicalSkills = {
-  "Lenguajes y Frameworks": ["JavaScript (ES6+)", "TypeScript", "React"],
-  "Estilos & UI": ["TailwindCSS", "Bootstrap", "CSS3", "HTML5"],
-  "Herramientas": ["Git", "GitHub", "NPM", "Vite"],
-  "Metodologías": ["Desarrollo ágil", "Arquitectura modular", "Buenas prácticas de código"]
+  "Lenguajes y Frameworks": ["JavaScript", "TypeScript", "React", "React Native", "Node.js"],
+  "Estilos & UI": ["HTML5", "CSS3", "Sass", "Bootstrap", "Styled-Components", "Semantic UI React"],
+  "Bases de Datos": ["MySQL", "Postgres"],
+  "Herramientas y Librerías": ["Git", "GitHub", "NPM", "Trello", "Context-API", "React Router", "React Hook Form"]
 };
 
 const softSkills = [
