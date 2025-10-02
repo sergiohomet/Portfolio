@@ -1,38 +1,11 @@
+
 import { Section } from "../Section";
 import { ProjectCard } from "../ProjectCard";
 import { FolderGit2 } from "lucide-react";
 import Image from "next/image";
+import projectsData from "@/lib/projects-data.json";
 
-const projects = [
-  {
-    title: "🥤 DrinkAPI",
-    description: "Aplicación desarrollada en React, con consumo de API. Implementada con React Router DOM, TailwindCSS, Zustand y Zod para la gestión de estado y validación.",
-    repoUrl: "https://github.com/sergiohomet/DrinkAPI",
-    liveUrl: "https://drinkspage.netlify.app/",
-    tags: ["React", "API", "TailwindCSS", "Zustand"],
-    imageSrc: "/DrinkAPI.webp",
-    imageAlt: "DrinkAPI project screenshot",
-  },
-  {
-    title: "🍽️ LenafTUC",
-    description: "Aplicación web para la generación de facturas en un negocio de comida, desarrollada con React, TypeScript, TailwindCSS, Vite y @react-pdf/renderer. Permite crear comprobantes en PDF de manera rápida y organizada, optimizando la administración de ventas.",
-    repoUrl: "https://github.com/sergiohomet/LenafTUC",
-    liveUrl: "https://lenaftuc.netlify.app/",
-    tags: ["React", "TypeScript", "PDF", "Vite"],
-    imageSrc: "/LenafTUC.webp",
-    imageAlt: "LenafTUC project screenshot",
-  },
-  {
-    title: "🏥 Patient Administrator",
-    description: "Sistema de administración de pacientes desarrollado con React, TypeScript, Zustand, React Hook Form y React Toastify, optimizado para una gestión de datos clara, validada y escalable.",
-    repoUrl: "https://github.com/sergiohomet/patient-administrator-zustand",
-    liveUrl: "https://patient-crud-zustand-reacthookform.netlify.app/",
-    tags: ["React", "TypeScript", "Zustand", "Forms"],
-    imageSrc: "/PatientAdministrator.webp",
-    imageAlt: "Patient Administrator project screenshot",
-  },
-];
-
+const { projects } = projectsData;
 
 export default function Projects() {
   return (
