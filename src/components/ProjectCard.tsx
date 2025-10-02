@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Github, ExternalLink } from "lucide-react";
@@ -19,8 +19,15 @@ export function ProjectCard({ title, description, repoUrl, liveUrl, tags, childr
   return (
     <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
       <div className={cn("grid grid-cols-1 md:grid-cols-2", isReversed ? "md:grid-flow-col-dense" : "")}>
-        <div className={cn("p-6 sm:p-8 flex flex-col justify-center", isReversed ? "md:col-start-2" : "")}>
-          <h3 className="font-headline text-2xl font-bold">{title}</h3>
+        <div className={cn("p-6 sm:p-8 flex flex-col justify-center", isReversed ? "md:col-start-2" : "md:row-start-1")}>
+          <h3 className="font-headline text-2xl font-bold md:row-start-1">{title}</h3>
+          <div className="md:hidden mt-4">
+             {children ? children : (
+              <div className="w-full h-48 bg-muted rounded-lg flex items-center justify-center">
+                <span className="text-muted-foreground text-sm">Visualización del proyecto</span>
+              </div>
+            )}
+          </div>
           <p className="mt-4 text-muted-foreground">{description}</p>
           <div className="mt-4 flex flex-wrap gap-2">
             {tags.map(tag => (
@@ -44,7 +51,7 @@ export function ProjectCard({ title, description, repoUrl, liveUrl, tags, childr
             )}
           </div>
         </div>
-        <div className={cn("bg-muted/30 dark:bg-card p-6 sm:p-8 flex items-center justify-center", isReversed ? "md:col-start-1" : "")}>
+        <div className={cn("bg-muted/30 dark:bg-card p-6 sm:p-8 hidden md:flex items-center justify-center", isReversed ? "md:col-start-1" : "")}>
           {children ? children : (
             <div className="w-full h-48 bg-muted rounded-lg flex items-center justify-center">
               <span className="text-muted-foreground text-sm">Visualización del proyecto</span>
