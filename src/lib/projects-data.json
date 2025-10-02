@@ -7,7 +7,7 @@
       "repoUrl": "https://github.com/sergiohomet/DrinkAPI",
       "liveUrl": "https://drinkspage.netlify.app/",
       "tags": ["React", "API", "TailwindCSS", "Zustand"],
-      "imageSrc": "/DrinkAPI.webp",
+      "imageSrc": "/drinkapi.webp",
       "imageAlt": "DrinkAPI project screenshot"
     },
     {
@@ -16,7 +16,7 @@
       "repoUrl": "https://github.com/sergiohomet/LenafTUC",
       "liveUrl": "https://lenaftuc.netlify.app/",
       "tags": ["React", "TypeScript", "PDF", "Vite"],
-      "imageSrc": "/LenafTUC.webp",
+      "imageSrc": "/lenaftuc.webp",
       "imageAlt": "LenafTUC project screenshot"
     },
     {
@@ -25,7 +25,7 @@
       "repoUrl": "https://github.com/sergiohomet/patient-administrator-zustand",
       "liveUrl": "https://patient-crud-zustand-reacthookform.netlify.app/",
       "tags": ["React", "TypeScript", "Zustand", "Forms"],
-      "imageSrc": "/PatientAdministrator.webp",
+      "imageSrc": "/admin.webp",
       "imageAlt": "Patient Administrator project screenshot"
     }
   ]

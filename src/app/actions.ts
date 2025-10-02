@@ -33,27 +33,3 @@ export async function handleContactForm(prevState: any, formData: FormData) {
     error: ''
   };
 }
-
-
-// Drink Recommender Action
-const drinkRecommenderSchema = z.object({
-  criteria: z.string().min(5, { message: "Por favor, danos más detalles sobre tus gustos." }),
-});
-
-export async function getDrinkRecommendations(prevState: any, formData: FormData) {
-  const validatedFields = drinkRecommenderSchema.safeParse({
-    criteria: formData.get('criteria'),
-  });
-
-  if (!validatedFields.success) {
-    return {
-      recommendation: '',
-      error: validatedFields.error.flatten().fieldErrors.criteria?.[0] || 'Entrada inválida.',
-    };
-  }
-  
-  return {
-    recommendation: 'Esta es una recomendación de ejemplo. La funcionalidad de IA ha sido eliminada.',
-    error: '',
-  };
-}
