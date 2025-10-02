@@ -83,7 +83,6 @@ export default function ContactForm() {
             action={formAction} 
             className="space-y-4"
             onSubmit={(evt) => {
-              evt.preventDefault();
               form.handleSubmit(() => {
                 const formData = new FormData(evt.currentTarget);
                 formAction(formData);
