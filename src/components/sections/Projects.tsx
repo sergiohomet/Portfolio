@@ -1,6 +1,5 @@
 import { Section } from "../Section";
 import { ProjectCard } from "../ProjectCard";
-import DrinkRecommender from "../DrinkRecommender";
 import { FolderGit2 } from "lucide-react";
 
 const projects = [
@@ -8,8 +7,7 @@ const projects = [
     title: "🥤 DrinkAPI",
     description: "Aplicación desarrollada en React, con consumo de API y funcionalidades de IA para recomendaciones de tragos personalizadas. Implementada con React Router DOM, TailwindCSS, Zustand y Zod para la gestión de estado y validación.",
     repoUrl: "https://github.com/sergiohomet/DrinkAPI",
-    tags: ["React", "API", "AI", "TailwindCSS", "Zustand"],
-    component: <DrinkRecommender />
+    tags: ["React", "API", "AI", "TailwindCSS", "Zustand"]
   },
   {
     title: "🍽️ LenafTUC",
