@@ -70,14 +70,6 @@ export default function ContactForm() {
     }
   }, [state, toast, form]);
 
-  const onFormSubmit = (data: FormValues) => {
-    const formData = new FormData();
-    formData.append('name', data.name);
-    formData.append('email', data.email);
-    formData.append('message', data.message);
-    formAction(formData);
-  };
-
   return (
     <Card className="shadow-lg">
       <CardHeader>
@@ -88,8 +80,7 @@ export default function ContactForm() {
         <Form {...form}>
           <form 
             ref={formRef}
-            action={(formData) => formAction(formData)}
-            onSubmit={form.handleSubmit(onFormSubmit)}
+            action={formAction}
             className="space-y-4"
           >
              <FormField
