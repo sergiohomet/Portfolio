@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, Download, Briefcase } from "lucide-react";
 import { Section } from "../Section";
 
 export default function Hero() {
@@ -7,7 +7,7 @@ export default function Hero() {
     <Section id="inicio" className="pt-24 sm:pt-32">
         <div className="text-center">
             <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            👉 Sergio Nicolás Homet Herrera – Desarrollador Front End
+            Sergio Homet – Desarrollador Front End
             </h1>
             <h2 className="mt-6 font-headline text-2xl font-medium tracking-tight text-primary sm:text-3xl">
             Desarrollo aplicaciones web escalables y optimizadas con React, Next.js y TypeScript.
@@ -19,6 +19,11 @@ export default function Hero() {
                 <a href="#proyectos">
                     <Button>
                         Mis Proyectos <ArrowRight className="ml-2"/>
+                    </Button>
+                </a>
+                <a href="#experiencia">
+                    <Button variant="outline">
+                        Experiencia <Briefcase className="ml-2"/>
                     </Button>
                 </a>
                 <a href="/CV-Sergio-Homet.pdf" download="CV-Sergio-Homet.pdf">

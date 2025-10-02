@@ -12,7 +12,7 @@ export default function About() {
         <div className="lg:col-span-1 flex justify-center">
             {avatarImage && (
                 <Image 
-                    src={avatarImage.imageUrl}
+                    src="/sergiohomet.webp"
                     alt={avatarImage.description}
                     width={300}
                     height={300}
