@@ -21,10 +21,7 @@ export default function About() {
                 Sobre mí
             </h2>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-            Me apasiona la tecnología y la libertad creativa de la programación. Disfruto transformar ideas en soluciones funcionales que aporten valor real a las personas y me motiva el desafío de resolver problemas complejos.
-            </p>
-            <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-            Fuera del código, me encontrarás levantando pesas, inmerso en un buen libro o explorando mundos en los videojuegos. Esta disciplina y curiosidad se reflejan en mi trabajo, donde siempre busco entregar un producto de calidad y estoy abierto a todo tipo de proyectos innovadores.
+            Me apasiona la tecnología y la libertad creativa de la programación. Disfruto transformar ideas en soluciones funcionales que aporten valor a las personas y me motiva el desafío de resolver problemas.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-6">
               <div className="flex items-center gap-3">
