@@ -7,18 +7,21 @@ const projects = [
     title: "🥤 DrinkAPI",
     description: "Aplicación desarrollada en React, con consumo de API y funcionalidades de IA para recomendaciones de tragos personalizadas. Implementada con React Router DOM, TailwindCSS, Zustand y Zod para la gestión de estado y validación.",
     repoUrl: "https://github.com/sergiohomet/DrinkAPI",
+    liveUrl: "https://drinkspage.netlify.app/",
     tags: ["React", "API", "AI", "TailwindCSS", "Zustand"]
   },
   {
     title: "🍽️ LenafTUC",
     description: "Aplicación web para la generación de facturas en un negocio de comida, desarrollada con React, TypeScript, TailwindCSS, Vite y @react-pdf/renderer. Permite crear comprobantes en PDF de manera rápida y organizada, optimizando la administración de ventas.",
     repoUrl: "https://github.com/sergiohomet/LenafTUC",
+    liveUrl: "https://lenaftuc.netlify.app/",
     tags: ["React", "TypeScript", "PDF", "Vite"]
   },
   {
     title: "🏥 Patient Administrator",
     description: "Sistema de administración de pacientes desarrollado con React, TypeScript, Zustand, React Hook Form y React Toastify, optimizado para una gestión de datos clara, validada y escalable.",
     repoUrl: "https://github.com/sergiohomet/patient-administrator-zustand",
+    liveUrl: "https://patient-crud-zustand-reacthookform.netlify.app/",
     tags: ["React", "TypeScript", "Zustand", "Forms"]
   },
 ];
@@ -39,6 +42,7 @@ export default function Projects() {
             title={project.title}
             description={project.description}
             repoUrl={project.repoUrl}
+            liveUrl={project.liveUrl}
             tags={project.tags}
             isReversed={index % 2 !== 0}
           >
