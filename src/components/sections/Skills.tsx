@@ -38,7 +38,7 @@ export default function Skills() {
                         <h4 className="text-lg font-semibold mb-3 text-center md:text-left text-primary">{category}</h4>
                         <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                         {skills.map(skill => (
-                            <Badge key={skill} variant="default" className="bg-accent/80 hover:bg-accent text-accent-foreground text-sm px-3 py-1">{skill}</Badge>
+                            <Badge key={skill} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground text-sm px-3 py-1">{skill}</Badge>
                         ))}
                         </div>
                     </div>
@@ -54,7 +54,7 @@ export default function Skills() {
               </h3>
               <div className="flex flex-wrap gap-2 justify-center">
                   {softSkills.map(skill => (
-                  <Badge key={skill} variant="default" className="bg-accent/80 hover:bg-accent text-accent-foreground text-sm px-3 py-1">{skill}</Badge>
+                  <Badge key={skill} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground text-sm px-3 py-1">{skill}</Badge>
                   ))}
               </div>
             </div>
