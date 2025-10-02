@@ -2,16 +2,14 @@ import { Section } from "../Section";
 import { ProjectCard } from "../ProjectCard";
 import { FolderGit2 } from "lucide-react";
 import Image from "next/image";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
-import DrinkRecommender from "../DrinkRecommender";
 
 const projects = [
   {
     title: "🥤 DrinkAPI",
-    description: "Aplicación desarrollada en React, con consumo de API y funcionalidades de IA para recomendaciones de tragos personalizadas. Implementada con React Router DOM, TailwindCSS, Zustand y Zod para la gestión de estado y validación.",
+    description: "Aplicación desarrollada en React, con consumo de API. Implementada con React Router DOM, TailwindCSS, Zustand y Zod para la gestión de estado y validación.",
     repoUrl: "https://github.com/sergiohomet/DrinkAPI",
     liveUrl: "https://drinkspage.netlify.app/",
-    tags: ["React", "API", "AI", "TailwindCSS", "Zustand"],
+    tags: ["React", "API", "TailwindCSS", "Zustand"],
     imageId: "drink-api",
   },
   {
@@ -34,8 +32,6 @@ const projects = [
 
 
 export default function Projects() {
-  const getImage = (id: string) => PlaceHolderImages.find(p => p.id === id);
-
   return (
     <Section id="proyectos">
       <h2 className="flex items-center gap-3 font-headline text-3xl font-bold text-primary mb-12">
@@ -45,7 +41,6 @@ export default function Projects() {
 
       <div className="space-y-12">
         {projects.map((project, index) => {
-          const image = getImage(project.imageId);
           return (
             <ProjectCard 
               key={project.title}
@@ -64,6 +59,14 @@ export default function Projects() {
                     height={400}
                     className="object-cover rounded-lg"
                   />
+                ) : project.imageId === 'patient-admin' ? (
+                    <Image
+                        src="/patient-admin-screenshot.png"
+                        alt="Patient Administrator project screenshot"
+                        width={600}
+                        height={400}
+                        className="object-cover rounded-lg"
+                    />
                 ) : (
                   <div className="w-full h-48 bg-muted rounded-lg flex items-center justify-center">
                     <span className="text-muted-foreground text-sm">Visualización del proyecto</span>
