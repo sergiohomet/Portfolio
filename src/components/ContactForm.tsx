@@ -5,7 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useFormState, useFormStatus } from 'react-dom';
 import { handleContactForm } from '@/app/actions';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useToast } from '@/hooks/use-toast';
 
 import { Button } from '@/components/ui/button';
@@ -41,6 +41,7 @@ function SubmitButton() {
 export default function ContactForm() {
   const [state, formAction] = useFormState(handleContactForm, initialState);
   const { toast } = useToast();
+  const formRef = useRef<HTMLFormElement>(null);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -76,7 +77,18 @@ export default function ContactForm() {
       </CardHeader>
       <CardContent>
         <Form {...form}>
-          <form action={formAction} className="space-y-4">
+          <form 
+            ref={formRef}
+            action={formAction} 
+            className="space-y-4"
+            onSubmit={(evt) => {
+              evt.preventDefault();
+              form.handleSubmit(() => {
+                const formData = new FormData(evt.currentTarget);
+                formAction(formData);
+              })(evt);
+            }}
+          >
              <FormField
               control={form.control}
               name="name"
@@ -116,11 +128,6 @@ export default function ContactForm() {
                 </FormItem>
               )}
             />
-             {/* We need to pass form data to server action */}
-             <input type="hidden" name="name" value={form.getValues("name")} />
-             <input type="hidden" name="email" value={form.getValues("email")} />
-             <input type="hidden" name="message" value={form.getValues("message")} />
-
             <SubmitButton />
           </form>
         </Form>

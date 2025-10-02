@@ -10,7 +10,7 @@ const projects = [
     repoUrl: "https://github.com/sergiohomet/DrinkAPI",
     liveUrl: "https://drinkspage.netlify.app/",
     tags: ["React", "API", "TailwindCSS", "Zustand"],
-    imageSrc: "/drink-api-screenshot.png",
+    imageSrc: "/DrinkAPI.webp",
     imageAlt: "DrinkAPI project screenshot",
   },
   {
@@ -19,7 +19,7 @@ const projects = [
     repoUrl: "https://github.com/sergiohomet/LenafTUC",
     liveUrl: "https://lenaftuc.netlify.app/",
     tags: ["React", "TypeScript", "PDF", "Vite"],
-    imageSrc: "/lenaf-tuc-screenshot.png",
+    imageSrc: "/LenafTUC.webp",
     imageAlt: "LenafTUC project screenshot",
   },
   {
@@ -28,7 +28,7 @@ const projects = [
     repoUrl: "https://github.com/sergiohomet/patient-administrator-zustand",
     liveUrl: "https://patient-crud-zustand-reacthookform.netlify.app/",
     tags: ["React", "TypeScript", "Zustand", "Forms"],
-    imageSrc: "/patient-admin-screenshot.png",
+    imageSrc: "/PatientAdministrator.webp",
     imageAlt: "Patient Administrator project screenshot",
   },
 ];
