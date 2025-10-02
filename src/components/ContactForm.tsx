@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { useFormState } from "react-dom";
+import { useActionState } from "react";
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -50,7 +50,7 @@ CustomFormMessage.displayName = "CustomFormMessage";
 
 
 export default function ContactForm() {
-  const [state, formAction] = useFormState(handleContactForm, { message: '', error: '' });
+  const [state, formAction] = useActionState(handleContactForm, { message: '', error: '' });
   const formRef = useRef<HTMLFormElement>(null);
   const { toast } = useToast();
 
