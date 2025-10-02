@@ -10,7 +10,8 @@ const projects = [
     repoUrl: "https://github.com/sergiohomet/DrinkAPI",
     liveUrl: "https://drinkspage.netlify.app/",
     tags: ["React", "API", "TailwindCSS", "Zustand"],
-    imageId: "drink-api",
+    imageSrc: "/drink-api-screenshot.png",
+    imageAlt: "DrinkAPI project screenshot",
   },
   {
     title: "🍽️ LenafTUC",
@@ -18,7 +19,8 @@ const projects = [
     repoUrl: "https://github.com/sergiohomet/LenafTUC",
     liveUrl: "https://lenaftuc.netlify.app/",
     tags: ["React", "TypeScript", "PDF", "Vite"],
-    imageId: "lenaf-tuc",
+    imageSrc: "/lenaf-tuc-screenshot.png",
+    imageAlt: "LenafTUC project screenshot",
   },
   {
     title: "🏥 Patient Administrator",
@@ -26,7 +28,8 @@ const projects = [
     repoUrl: "https://github.com/sergiohomet/patient-administrator-zustand",
     liveUrl: "https://patient-crud-zustand-reacthookform.netlify.app/",
     tags: ["React", "TypeScript", "Zustand", "Forms"],
-    imageId: "patient-admin",
+    imageSrc: "/patient-admin-screenshot.png",
+    imageAlt: "Patient Administrator project screenshot",
   },
 ];
 
@@ -51,27 +54,13 @@ export default function Projects() {
               tags={project.tags}
               isReversed={index % 2 !== 0}
             >
-              {project.imageId === 'lenaf-tuc' ? (
-                  <Image 
-                    src="/lenaf-tuc-screenshot.png"
-                    alt="LenafTUC project screenshot"
-                    width={600}
-                    height={400}
-                    className="object-cover rounded-lg"
-                  />
-                ) : project.imageId === 'patient-admin' ? (
-                    <Image
-                        src="/patient-admin-screenshot.png"
-                        alt="Patient Administrator project screenshot"
-                        width={600}
-                        height={400}
-                        className="object-cover rounded-lg"
-                    />
-                ) : (
-                  <div className="w-full h-48 bg-muted rounded-lg flex items-center justify-center">
-                    <span className="text-muted-foreground text-sm">Visualización del proyecto</span>
-                  </div>
-              )}
+              <Image 
+                src={project.imageSrc}
+                alt={project.imageAlt}
+                width={600}
+                height={400}
+                className="object-cover rounded-lg"
+              />
             </ProjectCard>
           )
         })}
