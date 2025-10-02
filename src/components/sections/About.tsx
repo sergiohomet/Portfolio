@@ -1,25 +1,19 @@
 import { Section } from "../Section";
 import Image from "next/image";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Briefcase, GraduationCap, User } from "lucide-react";
-
-const avatarImage = PlaceHolderImages.find(p => p.id === 'avatar');
 
 export default function About() {
   return (
     <Section id="sobre-mi" className="bg-muted/50 dark:bg-card">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
         <div className="lg:col-span-1 flex justify-center">
-            {avatarImage && (
-                <Image 
-                    src="/sergiohomet.webp"
-                    alt={avatarImage.description}
-                    width={300}
-                    height={300}
-                    className="rounded-full object-cover border-4 border-primary shadow-lg"
-                    data-ai-hint={avatarImage.imageHint}
-                />
-            )}
+            <Image 
+                src="/sergiohomet.webp"
+                alt="Sergio Homet"
+                width={300}
+                height={300}
+                className="rounded-full object-cover border-4 border-primary shadow-lg"
+            />
         </div>
         <div className="lg:col-span-2">
             <h2 className="flex items-center gap-3 font-headline text-3xl font-bold text-primary">
@@ -27,10 +21,10 @@ export default function About() {
                 Sobre mí
             </h2>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-            Soy un Desarrollador Front End orientado a la experiencia de usuario y la creación de interfaces eficientes. Mi experiencia en Uploy (2024 – 2025) me permitió colaborar en proyectos de gran escala, donde implementé arquitectura modular y mejoré el rendimiento de las aplicaciones en un 20%, además de proponer nuevas funcionalidades que aumentaron la retención de usuarios en un 15%.
+            Me apasiona la tecnología y la libertad creativa de la programación. Disfruto transformar ideas en soluciones funcionales que aporten valor real a las personas y me motiva el desafío de resolver problemas complejos.
             </p>
             <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-            Actualmente continúo perfeccionando mis habilidades como freelancer y estudiante de la Universidad Tecnológica Nacional (UTN), con el objetivo de crecer profesionalmente y aportar soluciones innovadoras en entornos ágiles y colaborativos.
+            Fuera del código, me encontrarás levantando pesas, inmerso en un buen libro o explorando mundos en los videojuegos. Esta disciplina y curiosidad se reflejan en mi trabajo, donde siempre busco entregar un producto de calidad y estoy abierto a todo tipo de proyectos innovadores.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-6">
               <div className="flex items-center gap-3">
