@@ -15,7 +15,7 @@ export default function Hero() {
             <p className="mt-8 max-w-3xl mx-auto text-lg text-muted-foreground">
             Soy Desarrollador Front End con experiencia en la construcción de interfaces modernas y de alto rendimiento. Me especializo en tecnologías como React, TypeScript y TailwindCSS, aplicando buenas prácticas de código y atención al detalle.
             </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-4 sm:gap-6">
                 <a href="#proyectos">
                     <Button>
                         Mis Proyectos <ArrowRight className="ml-2"/>
