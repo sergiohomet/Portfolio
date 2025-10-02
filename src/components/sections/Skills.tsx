@@ -18,7 +18,7 @@ const softSkills = [
 
 export default function Skills() {
   return (
-    <Section id="habilidades" className="bg-muted/50 dark:bg-card">
+    <Section id="habilidades">
       <Card className="shadow-lg">
           <CardHeader>
               <CardTitle className="flex items-center gap-3 font-headline text-3xl font-bold text-primary justify-center">
@@ -26,9 +26,9 @@ export default function Skills() {
                   Habilidades
               </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-8">
+          <Separator className="w-1/2 mx-auto" />
+          <CardContent className="space-y-8 pt-6">
             <div className="space-y-6">
-                <Separator />
                 <h3 className="text-xl font-semibold text-center">
                 Habilidades Técnicas
                 </h3>

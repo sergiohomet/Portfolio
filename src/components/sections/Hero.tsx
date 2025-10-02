@@ -1,11 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download, Briefcase } from "lucide-react";
 import { Section } from "../Section";
+import { Card } from "../ui/card";
 
 export default function Hero() {
   return (
     <Section id="inicio" className="pt-24 sm:pt-32">
-        <div className="text-center">
+      <Card className="shadow-lg">
+        <div className="text-center p-8 sm:p-12">
             <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             Sergio Homet – Desarrollador Front End
             </h1>
@@ -33,6 +35,7 @@ export default function Hero() {
                 </a>
             </div>
         </div>
+      </Card>
     </Section>
   )
 }
