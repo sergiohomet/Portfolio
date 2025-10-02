@@ -1,10 +1,11 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { Code2 } from 'lucide-react';
+import { Code2, Menu } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 
 const navLinks = [
   { href: '#inicio', label: 'Inicio' },
@@ -49,11 +50,40 @@ export default function Header() {
             </a>
           ))}
         </nav>
-        <div className="flex flex-1 items-center justify-end space-x-4">
+        <div className="flex flex-1 items-center justify-end space-x-2 sm:space-x-4">
           <ThemeToggle />
-          <a href="#contacto">
+          <a href="#contacto" className="hidden sm:block">
             <Button>Contáctame</Button>
           </a>
+          <div className="md:hidden">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu />
+                  <span className="sr-only">Abrir menú</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right">
+                <nav className="flex flex-col space-y-4 mt-8">
+                  {navLinks.map((link) => (
+                     <SheetClose asChild key={link.href}>
+                        <a
+                        href={link.href}
+                        className="text-lg transition-colors hover:text-primary"
+                        >
+                        {link.label}
+                        </a>
+                    </SheetClose>
+                  ))}
+                  <SheetClose asChild>
+                    <a href="#contacto">
+                        <Button className="w-full mt-4">Contáctame</Button>
+                    </a>
+                  </SheetClose>
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </header>

@@ -40,14 +40,14 @@ export default function Contact() {
       <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         <ContactForm />
         <div className="space-y-6">
-          <h3 className="font-headline text-xl font-bold">O encuéntrame en:</h3>
+          <h3 className="font-headline text-xl font-bold text-center lg:text-left">O encuéntrame en:</h3>
           {contactLinks.map(({ icon: Icon, label, href, text }) => (
             <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="block">
               <Button variant="outline" className="w-full justify-start h-14 text-left">
-                <Icon className="mr-4 h-6 w-6 text-accent" />
-                <div className="flex flex-col">
-                  <span className="font-semibold">{label}</span>
-                  <span className="text-muted-foreground text-sm">{text}</span>
+                <Icon className="mr-4 h-6 w-6 text-accent flex-shrink-0" />
+                <div className="flex flex-col overflow-hidden">
+                  <span className="font-semibold truncate">{label}</span>
+                  <span className="text-muted-foreground text-sm truncate">{text}</span>
                 </div>
               </Button>
             </a>
