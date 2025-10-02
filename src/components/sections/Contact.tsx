@@ -13,7 +13,7 @@ const contactLinks = [
   {
     icon: Linkedin,
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/sergiohomet",
+    href: "https://www.linkedin.com/in/sergio-homet-herrera-618126213/",
     text: "Perfil Profesional"
   },
   {
