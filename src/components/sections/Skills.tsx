@@ -27,28 +27,29 @@ export default function Skills() {
               </CardTitle>
           </CardHeader>
           <CardContent className="space-y-8">
-            <div>
-              <h3 className="text-xl font-semibold mb-4 text-center">
+            <div className="space-y-6">
+                <Separator />
+                <h3 className="text-xl font-semibold text-center">
                 Habilidades Técnicas
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
                 {Object.entries(technicalSkills).map(([category, skills]) => (
-                <div key={category}>
-                    <h4 className="text-lg font-semibold mb-3 text-center md:text-left text-primary">{category}</h4>
-                    <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                    {skills.map(skill => (
-                        <Badge key={skill} variant="default" className="bg-primary/80 hover:bg-primary text-primary-foreground text-sm px-3 py-1">{skill}</Badge>
-                    ))}
+                    <div key={category}>
+                        <h4 className="text-lg font-semibold mb-3 text-center md:text-left text-primary">{category}</h4>
+                        <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                        {skills.map(skill => (
+                            <Badge key={skill} variant="default" className="bg-accent/80 hover:bg-accent text-accent-foreground text-sm px-3 py-1">{skill}</Badge>
+                        ))}
+                        </div>
                     </div>
-                </div>
                 ))}
-              </div>
+                </div>
             </div>
             
             <Separator />
 
-            <div>
-              <h3 className="text-xl font-semibold mb-4 text-center">
+            <div className="space-y-6">
+              <h3 className="text-xl font-semibold text-center">
                 Habilidades Blandas
               </h3>
               <div className="flex flex-wrap gap-2 justify-center">
