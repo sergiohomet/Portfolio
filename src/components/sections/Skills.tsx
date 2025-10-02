@@ -17,7 +17,7 @@ const softSkills = [
 export default function Skills() {
   return (
     <Section id="habilidades" className="bg-muted/50 dark:bg-card">
-      <div className="grid grid-cols-1 gap-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div>
           <h2 className="flex items-center gap-3 font-headline text-3xl font-bold text-primary mb-8 justify-center lg:justify-start">
             <Wrench className="w-8 h-8" />
@@ -36,7 +36,7 @@ export default function Skills() {
             ))}
           </div>
         </div>
-        <div className="mt-8">
+        <div>
           <h2 className="flex items-center gap-3 font-headline text-3xl font-bold text-primary mb-8 justify-center lg:justify-start">
             <Smile className="w-8 h-8" />
             Habilidades Blandas
