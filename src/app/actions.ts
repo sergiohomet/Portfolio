@@ -1,7 +1,6 @@
 'use server';
 
 import { z } from 'zod';
-import { personalizedDrinkRecommendations } from '@/ai/flows/personalized-drink-recommendations';
 
 // Contact Form Action
 const contactFormSchema = z.object({
@@ -53,27 +52,8 @@ export async function getDrinkRecommendations(prevState: any, formData: FormData
     };
   }
   
-  try {
-    const result = await personalizedDrinkRecommendations({
-      criteria: validatedFields.data.criteria,
-    });
-    
-    if (result?.recommendations) {
-        return {
-            recommendation: result.recommendations,
-            error: '',
-        };
-    }
-
-    return {
-        recommendation: '',
-        error: 'No se pudo generar una recomendación. Inténtalo de nuevo.'
-    }
-  } catch (error) {
-    console.error(error);
-    return {
-      recommendation: '',
-      error: 'Ocurrió un error al contactar al servicio de IA. Por favor, inténtalo más tarde.',
-    };
-  }
+  return {
+    recommendation: 'Esta es una recomendación de ejemplo. La funcionalidad de IA ha sido eliminada.',
+    error: '',
+  };
 }
