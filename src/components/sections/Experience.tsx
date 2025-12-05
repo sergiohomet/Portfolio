@@ -26,6 +26,26 @@ export default function Experience() {
           </ul>
         </CardContent>
       </Card>
+      
+      <Card className="max-w-3xl mx-auto shadow-lg">
+        <CardHeader>
+          <CardTitle className="text-2xl font-headline">Cajero / Encargado - Shell</CardTitle>
+          <CardDescription className="flex items-center gap-2 pt-1">
+            <Calendar className="w-4 h-4" />
+            Noviembre 2023 – Agosto 2024
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+            <li>Manejo de efectivo.</li>
+            <li>Manejo de personal.</li>
+            <li>Cierre de cajas.</li>
+            <li>Administración de pagos, stocks y cajas.</li>
+            <li>Carga de datos al sistema.</li>
+          </ul>
+        </CardContent>
+      </Card>
+      
     </Section>
   );
 }
