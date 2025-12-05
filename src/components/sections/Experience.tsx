@@ -9,7 +9,7 @@ export default function Experience() {
         <Briefcase className="w-8 h-8" />
         Experiencia Laboral
       </h2>
-      <Card className="max-w-3xl mx-auto shadow-lg">
+      <Card className="max-w-3xl mx-auto shadow-lg mb-5">
         <CardHeader>
           <CardTitle className="text-2xl font-headline">Front End Developer – Uploy</CardTitle>
           <CardDescription className="flex items-center gap-2 pt-1">
@@ -27,7 +27,7 @@ export default function Experience() {
         </CardContent>
       </Card>
       
-      <Card className="max-w-3xl mx-auto shadow-lg">
+      <Card className="max-w-3xl mx-auto shadow-lg mb-5">
         <CardHeader>
           <CardTitle className="text-2xl font-headline">Cajero / Encargado - Shell</CardTitle>
           <CardDescription className="flex items-center gap-2 pt-1">
