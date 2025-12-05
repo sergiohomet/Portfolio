@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download, Briefcase } from "lucide-react";
-import Section from "@/components/ui/Section";
-import Card from "@/components/ui/Card";
+import { Section } from "../Section";
+import { Card } from "../ui/card";
 
 export default function Hero() {
   return (
@@ -16,6 +16,7 @@ export default function Hero() {
             </h2>
             <p className="mt-8 max-w-3xl mx-auto text-lg text-muted-foreground">
             Soy Desarrollador Front End con experiencia en la construcción de interfaces modernas y de alto rendimiento.
+            </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4 sm:gap-6">
                 <a href="#proyectos">
                     <Button>
