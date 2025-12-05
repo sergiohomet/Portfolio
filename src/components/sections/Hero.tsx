@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download, Briefcase } from "lucide-react";
-import { Section } from "../Section";
-import { Card } from "../ui/card";
+import Section from "@/components/ui/Section";
+import Card from "@/components/ui/Card";
 
 export default function Hero() {
   return (
