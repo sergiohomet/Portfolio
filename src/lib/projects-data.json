@@ -1,32 +1,40 @@
-
 {
   "projects": [
     {
       "title": "DrinkAPI",
-      "description": "Aplicación desarrollada en React, con consumo de API. Implementada con React Router DOM, TailwindCSS, Zustand y Zod para la gestión de estado y validación.",
+      "description": {
+        "es": "Aplicación desarrollada en React, con consumo de API. Implementada con React Router DOM, TailwindCSS, Zustand y Zod para la gestión de estado y validación.",
+        "en": "React application with external API consumption. Built with React Router DOM, TailwindCSS, Zustand and Zod for state management and data validation."
+      },
       "repoUrl": "https://github.com/sergiohomet/DrinkAPI",
-      "liveUrl": "https://drinkapi-sergiohomet.netlify.app/",
-      "tags": ["React", "API", "TailwindCSS", "Zustand"],
+      "liveUrl": "https://drinkspage.netlify.app/",
+      "tags": ["ReactJS", "TypeScript", "API", "TailwindCSS", "Zustand"],
       "imageSrc": "/drinkapi.webp",
-      "imageAlt": "DrinkAPI project screenshot"
+      "imageAlt": "DrinkAPI project"
     },
     {
       "title": "LenafTUC",
-      "description": "Aplicación web para la generación de facturas en un negocio de comida, desarrollada con React, TypeScript, TailwindCSS, Vite y @react-pdf/renderer. Permite crear comprobantes en PDF de manera rápida y organizada, optimizando la administración de ventas.",
+      "description": {
+        "es": "Aplicación web para la generación de facturas en un negocio de comida, desarrollada con React, TypeScript, TailwindCSS, Vite y @react-pdf/renderer. Permite crear comprobantes en PDF de manera rápida y organizada, optimizando la administración de ventas.",
+        "en": "Web application for invoice generation in a food business, built with React, TypeScript, TailwindCSS, Vite and @react-pdf/renderer. Enables fast and organized PDF receipt creation, streamlining sales management."
+      },
       "repoUrl": "https://github.com/sergiohomet/LenafTUC",
       "liveUrl": "https://lenaftuc.netlify.app/",
-      "tags": ["React", "TypeScript", "PDF", "Vite"],
+      "tags": ["ReactJS", "TypeScript", "PDF", "TailwindCSS"],
       "imageSrc": "/lenaftuc.webp",
-      "imageAlt": "LenafTUC project screenshot"
+      "imageAlt": "LenafTUC project"
     },
     {
       "title": "Patient Administrator",
-      "description": "Sistema de administración de pacientes desarrollado con React, TypeScript, Zustand, React Hook Form y React Toastify, optimizado para una gestión de datos clara, validada y escalable.",
+      "description": {
+        "es": "Sistema de administración de pacientes desarrollado con React, TypeScript, Zustand, React Hook Form y React Toastify, optimizado para una gestión de datos clara, validada y escalable.",
+        "en": "Patient management system built with React, TypeScript, Zustand, React Hook Form and React Toastify, optimized for clear, validated and scalable data management."
+      },
       "repoUrl": "https://github.com/sergiohomet/patient-administrator-zustand",
-      "liveUrl": "https://patient-administrator-sergiohomet.netlify.app/",
-      "tags": ["React", "TypeScript", "Zustand", "Forms"],
+      "liveUrl": "https://patient-crud-zustand-reacthookform.netlify.app/",
+      "tags": ["ReactJS", "TypeScript", "Zustand", "React Hook Form", "TailwindCSS"],
       "imageSrc": "/admin.webp",
-      "imageAlt": "Patient Administrator project screenshot"
+      "imageAlt": "Patient Administrator project"
     }
   ]
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { useActionState } from "react";
+import { useActionState, useMemo } from "react";
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -13,17 +13,15 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Form, FormControl, FormField, FormItem, FormLabel, useFormField } from '@/components/ui/form';
-import { AlertDialog, AlertDialogAction, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from './ui/alert-dialog';
 import { cn } from '@/lib/utils';
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
-const formSchema = z.object({
-  name: z.string().min(2, { message: 'El nombre debe tener al menos 2 caracteres.' }),
-  email: z.string().email({ message: 'Por favor, introduce un email válido.' }),
-  message: z.string().min(10, { message: 'El mensaje debe tener al menos 10 caracteres.' }),
-});
-
-type FormValues = z.infer<typeof formSchema>;
+type FormValues = {
+  name: string;
+  email: string;
+  message: string;
+};
 
 const CustomFormMessage = React.forwardRef<
   HTMLParagraphElement,
@@ -32,9 +30,7 @@ const CustomFormMessage = React.forwardRef<
   const { error } = useFormField();
   const body = error ? String(error?.message) : children;
 
-  if (!body) {
-    return null;
-  }
+  if (!body) return null;
 
   return (
     <p
@@ -48,19 +44,25 @@ const CustomFormMessage = React.forwardRef<
 });
 CustomFormMessage.displayName = "CustomFormMessage";
 
-
 export default function ContactForm() {
+  const { t } = useLanguage();
   const [state, formAction] = useActionState(handleContactForm, { message: '', error: '' });
   const formRef = useRef<HTMLFormElement>(null);
   const { toast } = useToast();
 
+  const formSchema = useMemo(
+    () =>
+      z.object({
+        name: z.string().min(2, { message: t.contactForm.nameValidation }),
+        email: z.string().email({ message: t.contactForm.emailValidation }),
+        message: z.string().min(10, { message: t.contactForm.messageValidation }),
+      }),
+    [t.contactForm]
+  );
+
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: '',
-      email: '',
-      message: '',
-    },
+    defaultValues: { name: '', email: '', message: '' },
     mode: 'onChange',
   });
 
@@ -69,77 +71,76 @@ export default function ContactForm() {
   useEffect(() => {
     if (state.message) {
       toast({
-        title: "¡Mensaje Enviado!",
+        title: t.contactForm.successTitle,
         description: state.message,
       });
-      reset(); 
+      reset();
     }
     if (state.error) {
       toast({
         variant: "destructive",
-        title: "Error al enviar",
+        title: t.contactForm.errorTitle,
         description: state.error,
       });
     }
-  }, [state, toast, reset]);
-
+  }, [state, toast, reset, t.contactForm]);
 
   return (
     <Card className="shadow-lg">
       <CardHeader>
-        <CardTitle className="font-headline">Envíame un mensaje</CardTitle>
+        <CardTitle className="font-headline">{t.contactForm.title}</CardTitle>
       </CardHeader>
       <CardContent>
-          <Form {...form}>
-            <form 
-              ref={formRef}
-              action={formAction}
-              className="space-y-4"
+        <Form {...form}>
+          <form ref={formRef} action={formAction} className="space-y-4">
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t.contactForm.nameLabel}</FormLabel>
+                  <FormControl>
+                    <Input placeholder={t.contactForm.namePlaceholder} {...field} />
+                  </FormControl>
+                  <CustomFormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t.contactForm.emailLabel}</FormLabel>
+                  <FormControl>
+                    <Input placeholder="tu@email.com" {...field} />
+                  </FormControl>
+                  <CustomFormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="message"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t.contactForm.messageLabel}</FormLabel>
+                  <FormControl>
+                    <Textarea placeholder={t.contactForm.messagePlaceholder} {...field} />
+                  </FormControl>
+                  <CustomFormMessage />
+                </FormItem>
+              )}
+            />
+            <Button
+              type="submit"
+              className="w-full"
+              disabled={!formState.isValid || formState.isSubmitting}
             >
-               <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Nombre</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Tu nombre" {...field} />
-                    </FormControl>
-                    <CustomFormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Email</FormLabel>
-                    <FormControl>
-                      <Input placeholder="tu@email.com" {...field} />
-                    </FormControl>
-                    <CustomFormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="message"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Mensaje</FormLabel>
-                    <FormControl>
-                      <Textarea placeholder="Escribe tu mensaje aquí..." {...field} />
-                    </FormControl>
-                    <CustomFormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button type="submit" className="w-full" disabled={!formState.isValid || formState.isSubmitting}>
-                {formState.isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
-              </Button>
-            </form>
-          </Form>
+              {formState.isSubmitting ? t.contactForm.sending : t.contactForm.send}
+            </Button>
+          </form>
+        </Form>
       </CardContent>
     </Card>
   );

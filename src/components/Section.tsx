@@ -7,7 +7,7 @@ interface SectionProps extends ComponentProps<"section"> {
 
 export function Section({ id, className, children, ...props }: SectionProps) {
   return (
-    <section id={id} className={cn("py-16 sm:py-20", className)} {...props}>
+    <section id={id} className={cn("py-8 sm:py-10", className)} {...props}>
       <div className="container">
         {children}
       </div>
